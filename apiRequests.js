@@ -135,7 +135,10 @@ async function loadAllBadges(userId) {
             badgesData[tempIndex]["awardedDate"] = new Date(badge.awardedDate);
             badgesData[tempIndex]["created"] = new Date(badgesData[tempIndex]["created"]);
             allBadgesData[badge.badgeId] = badgesData[tempIndex];
-            allDaysInBetween[getStringData(new Date(badge.awardedDate))]["badges"].push(badge.badgeId);
+            //if getStringData(new Date(badge.awardedDate)) in allDaysInBetween:
+            if (getStringData(new Date(badge.awardedDate)) in allDaysInBetween) {
+                allDaysInBetween[getStringData(new Date(badge.awardedDate))]["badges"].push(badge.badgeId);
+            }
             tempIndex += 1;
         }
         setCalendarUI();
