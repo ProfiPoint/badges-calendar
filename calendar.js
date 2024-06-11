@@ -24,6 +24,13 @@ function calendarInit(uid, created) {
         }
     }
 
+    //check if "2020-01" is in Object.keys(calendarMonths) if so get the index of it else set it to 0
+    var tempIndexYYMMUrl = Object.keys(calendarMonths).indexOf(urlYM);
+    if (tempIndexYYMMUrl != -1) {
+        calendarMonthsINDEX = tempIndexYYMMUrl;
+    }
+
+
     resetBadgeIcons();
     setCalendarUI();
     setCurrentMonthBadgeIcons();

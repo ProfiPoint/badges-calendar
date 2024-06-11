@@ -2,6 +2,12 @@ const username = getParameterByName('username');
 const uid = getParameterByName('uid');
 const labOnly = getParameterByName('labOnly');
 const mainUrl = window.location.href.split('#')[0];
+var urlYM = window.location.href.split('#')[1];
+
+if (urlYM) {
+    const splitYM = urlYM.replace("-",",").split(",");
+    urlYM = parseInt(splitYM[1]) + "," + splitYM[0];
+}
 
 startDate = new Date(); 
 currentDate = new Date();
