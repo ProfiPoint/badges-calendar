@@ -42,6 +42,12 @@ form input[type="button"] {
     height: 100%;
     display: flex;
     flex-direction: column;
+    /*make it scrollable in y direction but hide the scrolling bar*/
+    overflow-y: auto;
+    overflow-x: auto;
+    /*hide the scrolling bar*/
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 .header {
     display: flex;
@@ -60,7 +66,8 @@ form input[type="button"] {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Hide overflow content */
+    /*overflow: hidden; /* Hide overflow content */
+    overflow-y: auto;
 }
 .image-container img {
     width: 30px;
