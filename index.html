@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/rblxCalendar.png" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div class="calendar">
+        <div class="header">
+            <button class="arrow" id="button-prev" onclick="previousMonth()">←</button>
+            <div class="month-year" id="month-year">Month Year</div>
+            <button class="arrow" id="button-next" onclick="nextMonth()">→</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="cell1"><div class="image-container"></div></td>
+                    <td id="cell2"><div class="image-container"></div></td>
+                    <td id="cell3"><div class="image-container"></div></td>
+                    <td id="cell4"><div class="image-container"></div></td>
+                    <td id="cell5"><div class="image-container"></div></td>
+                    <td id="cell6"><div class="image-container"></div></td>
+                    <td id="cell7"><div class="image-container"></div></td>
+                </tr>
+                <tr>
+                    <td id="cell8"><div class="image-container"></div></td>
+                    <td id="cell9"><div class="image-container"></div></td>
+                    <td id="cell10"><div class="image-container"></div></td>
+                    <td id="cell11"><div class="image-container"></div></td>
+                    <td id="cell12"><div class="image-container"></div></td>
+                    <td id="cell13"><div class="image-container"></div></td>
+                    <td id="cell14"><div class="image-container"></div></td>
+                </tr>
+                <tr>
+                    <td id="cell15"><div class="image-container"></div></td>
+                    <td id="cell16"><div class="image-container"></div></td>
+                    <td id="cell17"><div class="image-container"></div></td>
+                    <td id="cell18"><div class="image-container"></div></td>
+                    <td id="cell19"><div class="image-container"></div></td>
+                    <td id="cell20"><div class="image-container"></div></td>
+                    <td id="cell21"><div class="image-container"></div></td>
+                </tr>
+                <tr>
+                    <td id="cell22"><div class="image-container"></div></td>
+                    <td id="cell23"><div class="image-container"></div></td>
+                    <td id="cell24"><div class="image-container"></div></td>
+                    <td id="cell25"><div class="image-container"></div></td>
+                    <td id="cell26"><div class="image-container"></div></td>
+                    <td id="cell27"><div class="image-container"></div></td>
+                    <td id="cell28"><div class="image-container"></div></td>
+                </tr>
+                <tr>
+                    <td id="cell29"><div class="image-container"></div></td>
+                    <td id="cell30"><div class="image-container"></div></td>
+                    <td id="cell31"><div class="image-container"></div></td>
+                    <td id="cell32"><div class="image-container"></div></td>
+                    <td id="cell33"><div class="image-container"></div></td>
+                    <td id="cell34"><div class="image-container"></div></td>
+                    <td id="cell35"><div class="image-container"></div></td>
+                </tr>
+                <tr>
+                    <td id="cell36"><div class="image-container"></div></td>
+                    <td id="cell37"><div class="image-container"></div></td>
+                    <td id="cell38"><div class="image-container"></div></td>
+                    <td id="cell39"><div class="image-container"></div></td>
+                    <td id="cell40"><div class="image-container"></div></td>
+                    <td id="cell41"><div class="image-container"></div></td>
+                    <td id="cell42"><div class="image-container"></div></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="header">
+            <div id="footer">USERNAME (UID) | yyyy/mm/dd – yyyy/mm/dd | 0 total badges | 0 badges this month | Roblox Badges Calendar – ProfiPoint © 2024</div>
+            <img id="footer-logo" src="./assets/rblxCalendar.png" onclick="goToHome()">
+
+            
+
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <div class="popup-title">[Roblox Badges Calendar]</div>
+        <form>
+            <label for="username">Input Roblox Username:</label>
+            <input type="text" class="popup-username" id="username" name="username" required>
+            <label for="labOnlyBadges"><input class="popup-checkbox" type="checkbox" id="labOnlyBadges">Show only Badge Images of Lab Experiment</label>
+            <label for="search">
+                <input  class="search-button" type="button" id="search" value="Search" onclick="searchUsername()">
+            </label>
+            <label class="error-popup"></label>
+        </form>
+    </div>
+
+    <div class="badge" id="badge">
+        <div class="badge-title">[Badge Name]</div>
+        <form>
+            <div class="columns">
+                <div class="column1">
+                    <span for="unlockedStats">Player Unlocked: </span>
+                    <span for="createdStats">Badge Created:</span>
+                    <span for="differenceStats">Unlocked After:</span>
+                    <span for="gameStats">Game ID:</span>
+                    <span for="allAwardedStats">All Time Award.:</span>
+                    <span for="yesterdayAwardedStats">Yesterday Award.:</span>
+                    <span for="percentageAwardedStats">% Award.:</span>
+                    <span for="idStats">Badge ID:</span>
+                    <span for="enabledStats">Enabled:</span>
+                    <span for="descriptionStats">Description:</span>
+                </div>
+                <div class="column2">
+                    <span id="unlockedStatsV"></span>
+                    <span id="createdStatsV"></span>
+                    <span id="differenceStatsV"></span>
+                    <span id="gameStatsV"></span>
+                    <span id="allAwardedStatsV"></span>
+                    <span id="yesterdayAwardedStatsV"></span>
+                    <span id="percentageAwardedStatsV"></span>
+                    <span id="idStatsV"></span>
+                    <span id="enabledStatsV"></span>
+                    <span id="descriptionStatsV"></span>
+                </div>
+            </div>
+            <input class="close-button" type="button" id="close" value="Close" onclick="closeButton()">
+            <img id="badge-info-image" src="./assets/badge.png">
+            <label class="error-badge"></label>
+        </form>
+    </div>
+    
+    <script src="badgeInfo.js"></script>
+    <script src="controls.js"></script>
+    <script src="apiRequests.js"></script>
+    <script src="calendar.js"></script>
+    <script src="ui.js"></script>
+    <script src="variables.js"></script>
+</body>
+</html>
